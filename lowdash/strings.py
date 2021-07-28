@@ -75,8 +75,20 @@ def substr(string: str, start: int, end: int) -> str:
 
 def chunks(string: str, size: int) -> str:
     if(not isinstance(string, str)):
-        raise TypeError("[lowdash.strings] Argument string must be of type string")
+        raise TypeError(
+            "[lowdash.strings] Argument string must be of type string")
     if(not isinstance(size, int)):
         raise TypeError("[lowdash.strings] Argument size must be of type int")
     return array_chunks(list(string), size)
+
+
+def ends_with(string: str, suffix: str) -> bool:
+    if(not isinstance(string, str)):
+        raise TypeError(
+            "[lowdash.strings] Argument string must be of type string")
+    if(not isinstance(suffix, str)):
+        raise TypeError(
+            "[lowdash.strings] Argument suffix must be of type string")
+
+    return string.endswith(suffix)
 
