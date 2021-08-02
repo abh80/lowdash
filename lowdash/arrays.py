@@ -12,7 +12,7 @@ def chunks(array: list, size: int) -> list:
     >>> [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]
     ```
     """
-    return [array[i : i + size] for i in range(0, len(array), size)]
+    return [array[i: i + size] for i in range(0, len(array), size)]
 
 
 @args_type_checker
@@ -96,7 +96,8 @@ def fill(array: list, value, start: int, end: int) -> list:
     if end < 0:
         raise ValueError("[lowdash.fill]: End must be greater than 0.")
     if start > end:
-        raise ValueError("[lowdash.fill]: Start must be less than or equal to end.")
+        raise ValueError(
+            "[lowdash.fill]: Start must be less than or equal to end.")
     if len(array) < end:
         raise ValueError(
             "[lowdash.fill]: End must be greater than or equal to length of array."
@@ -177,8 +178,9 @@ def index_of(array: list, value) -> int:
     except ValueError:
         return -1
 
+
 @args_type_checker
-def push(array:list , value):
+def push(array: list, value) -> list:
     """
     Pushes the value to the end of the array
     ```py
@@ -186,7 +188,10 @@ def push(array:list , value):
     >>> [1, 2, 3, 4, 5, 6]
     ```
     """
-    return array.append(value)
+    array.append(value)
+    return array
+
+
 @args_type_checker
 def insert(array: list, index: int, value) -> list:
     """
@@ -337,7 +342,8 @@ def slice(array: list, start: int, end: int) -> list:
     if start > end:
         raise ValueError("[lowdash.slice]: Start must be less than end.")
     if start > len(array) - 1:
-        raise ValueError("[lowdash.slice]: Start must be less than length of array.")
+        raise ValueError(
+            "[lowdash.slice]: Start must be less than length of array.")
     return array[start:end]
 
 
